@@ -18,7 +18,7 @@ public class Shield : MonoBehaviour
             ChangeDirection();
         }
 
-        pointsText.text = "Enemies blocked " + points;
+        pointsText.text = "Points" + points;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

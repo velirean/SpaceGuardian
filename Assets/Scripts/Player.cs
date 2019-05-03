@@ -7,6 +7,8 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
+    int life = 5;
+
     private void Die()
     {
         GameObject.Find("GameManager(Clone)").GetComponent<GameManager>().GameOver();
@@ -21,11 +23,22 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            //Debug.Log("die()");
             Destroy(collision.gameObject);
-            Die();
+            TakeDamage();
         }
     }
 
+    private void TakeDamage()
+    {
+        this.life -= 1;
+        if (life <= 0)
+        {
+            Die();
+        } else
+        {
+            float colorValue = (float)life / 5;
+            gameObject.GetComponent<SpriteRenderer>().color = new Color(colorValue, colorValue, colorValue);
+        }
+    }
 
 }
