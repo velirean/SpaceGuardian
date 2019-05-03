@@ -68,7 +68,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator GenerateEnemy()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1f);
         GameObject enemyInstance = Instantiate(enemyPrefab, RandomEnemyPosition(), Quaternion.identity);
         enemyInstance.name = "Enemy";
         StartCoroutine(GenerateEnemy());

@@ -9,8 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2322631187282457398}
-  - component: {fileID: 8257659968204887009}
+  - component: {fileID: 7733975204037905318}
   - component: {fileID: 8691863257802901795}
+  - component: {fileID: 2692728113029218608}
   m_Layer: 0
   m_Name: Shield
   m_TagString: Untagged
@@ -32,7 +33,7 @@ Transform:
   m_Father: {fileID: 2322631187856416379}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8257659968204887009
+--- !u!114 &7733975204037905318
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,10 +42,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2322631187282457399}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77320fcbfde68f644befb1b80d899940, type: 3}
+  m_Script: {fileID: 11500000, guid: 24eca4599d64aea4b8abc586063f9fa7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointsText: {fileID: 0}
 --- !u!212 &8691863257802901795
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -93,6 +93,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &2692728113029218608
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2322631187282457399}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.02770082}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2, y: 2}
+    newSize: {x: 8, y: 8}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2, y: 0.39335197}
+  m_EdgeRadius: 0
 --- !u!1 &2322631187811652595
 GameObject:
   m_ObjectHideFlags: 0
@@ -117,7 +143,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2322631187811652595}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: 5, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2322631187856416379}
@@ -133,9 +159,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2322631187856416379}
+  - component: {fileID: 8708069236791810856}
   - component: {fileID: 2322631187856416378}
   - component: {fileID: 9015050193218994750}
-  - component: {fileID: 4738869703142691256}
+  - component: {fileID: 5254331759344950309}
   m_Layer: 0
   m_Name: player
   m_TagString: Player
@@ -158,6 +185,19 @@ Transform:
   m_Father: {fileID: 2322631187811652594}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!114 &8708069236791810856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2322631187856416376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77320fcbfde68f644befb1b80d899940, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pointsText: {fileID: 0}
 --- !u!212 &2322631187856416378
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -227,8 +267,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &4738869703142691256
-BoxCollider2D:
+--- !u!58 &5254331759344950309
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -240,16 +280,6 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.008982182, y: -0.013472527}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.3075, y: 3.305}
-    newSize: {x: 13.23, y: 13.22}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 1.3209375, y: 1.0482485}
-  m_EdgeRadius: 0
+  m_Radius: 1.3230003
