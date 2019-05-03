@@ -11,7 +11,7 @@ public class Shield : MonoBehaviour
 
     private void FixedUpdate()
     {
-        transform.RotateAround(new Vector3(8, 5), Vector3.forward, 140 * direction * Time.deltaTime);
+        transform.RotateAround(new Vector3(8, 5), Vector3.forward, 180 * direction * Time.deltaTime);
 
         if (Input.GetKeyDown(KeyCode.Space))
         {

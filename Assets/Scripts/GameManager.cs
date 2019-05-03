@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;
     public GameObject enemyPrefab;
+    public Sprite[] enemySprite;
 
     private float startDelay = 1f;
     private Text mainText;
@@ -71,6 +72,7 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(1f);
         GameObject enemyInstance = Instantiate(enemyPrefab, RandomEnemyPosition(), Quaternion.identity);
         enemyInstance.name = "Enemy";
+        enemyInstance.GetComponent<SpriteRenderer>().sprite = enemySprite[Random.Range(0, enemySprite.Length)];
         StartCoroutine(GenerateEnemy());
     }
 }

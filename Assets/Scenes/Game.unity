@@ -620,3 +620,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 1789754280245977142, guid: b5894c60d209b8d47977233795d23067,
     type: 3}
+  enemySprite:
+  - {fileID: 21300000, guid: bdb529151e4276349a77b0fe69768726, type: 3}
+  - {fileID: 21300000, guid: 0c11b9945f946a947af8e948ee5f7a1c, type: 3}
+  - {fileID: 21300000, guid: 249579e3c86629f4e82749394c9b4008, type: 3}
+  - {fileID: 21300000, guid: 67b82a3c77c0277448b51510b60991de, type: 3}
+  - {fileID: 21300000, guid: 31090557b381ac945843a4901554cfd8, type: 3}
+  - {fileID: 21300000, guid: 154512683849f5a41bdf62535a2ebe0b, type: 3}
+  - {fileID: 21300000, guid: 237b3fbd7b9334f4b865a018fa924c79, type: 3}
+  - {fileID: 21300000, guid: fc64709d51f1b8b49b4a8d2385088671, type: 3}
+  - {fileID: 21300000, guid: 0a621c26ea08fd041aeb642e61da89b8, type: 3}
