@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    Vector3 direction;
+    public float speed;
+
+    private void Start()
     {
-        
+        direction = (new Vector3(8, 5) - transform.position).normalized;
+
+        float rot_z = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0f, 0f, rot_z - 90);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
-        
+        Vector3 position = transform.position;
+        position += speed * direction;
+        transform.position = position;
     }
 }
