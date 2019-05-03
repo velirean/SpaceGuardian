@@ -9,6 +9,12 @@ public class Player : MonoBehaviour
 {
     int life = 5;
 
+
+    public void RestoreLife()
+    {
+        this.life = life >= 5 ? 5 : life + 1;
+        UpdateColor();
+    }
     private void Die()
     {
         GameObject.Find("GameManager(Clone)").GetComponent<GameManager>().GameOver();
@@ -25,6 +31,9 @@ public class Player : MonoBehaviour
         {
             Destroy(collision.gameObject);
             TakeDamage();
+        } else if (collision.gameObject.CompareTag("RestoreLife"))
+        {
+            Destroy(collision.gameObject);
         }
     }
 
@@ -36,9 +45,13 @@ public class Player : MonoBehaviour
             Die();
         } else
         {
-            float colorValue = (float)life / 5;
-            gameObject.GetComponent<SpriteRenderer>().color = new Color(colorValue, colorValue, colorValue);
+            UpdateColor();
         }
     }
 
+    private void UpdateColor()
+    {
+        float colorValue = (float)life / 5;
+        gameObject.GetComponent<SpriteRenderer>().color = new Color(colorValue, colorValue, colorValue);
+    }
 }

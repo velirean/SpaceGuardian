@@ -8,6 +8,12 @@ public class Shield : MonoBehaviour
     public Text pointsText;
     private int points = 0;
     private int direction = 1;
+    private Player player;
+
+    private void Awake()
+    {
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+    }
 
     private void FixedUpdate()
     {
@@ -26,6 +32,10 @@ public class Shield : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             points += 10;
+            Destroy(collision.gameObject);
+        } else if (collision.gameObject.CompareTag("RestoreLife"))
+        {
+            player.RestoreLife();
             Destroy(collision.gameObject);
         }
     }

@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;
     public GameObject enemyPrefab;
+    public GameObject lifePrefab;
     public Sprite[] enemySprite;
 
     private float startDelay = 1f;
@@ -31,6 +32,7 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
         InitGame();
         StartCoroutine(GenerateEnemy());
+        StartCoroutine(GenerateRestoreLife());
     }
 
     public void InitGame()
@@ -51,7 +53,7 @@ public class GameManager : MonoBehaviour
         enabled = false;
     }
 
-    private Vector3 RandomEnemyPosition()
+    private Vector3 RandomPosition()
     {
         float y = Random.Range(-1f, 11f);
         float x;
@@ -70,10 +72,18 @@ public class GameManager : MonoBehaviour
     IEnumerator GenerateEnemy()
     {
         yield return new WaitForSeconds(1f);
-        GameObject enemyInstance = Instantiate(enemyPrefab, RandomEnemyPosition(), Quaternion.identity);
+        GameObject enemyInstance = Instantiate(enemyPrefab, RandomPosition(), Quaternion.identity);
         enemyInstance.name = "Enemy";
         enemyInstance.GetComponent<SpriteRenderer>().sprite = enemySprite[Random.Range(0, enemySprite.Length)];
         StartCoroutine(GenerateEnemy());
+    }
+
+    IEnumerator GenerateRestoreLife()
+    {
+        yield return new WaitForSeconds(10f);
+        GameObject lifeInstance = Instantiate(lifePrefab, RandomPosition(), Quaternion.identity);
+        lifeInstance.name = "MoonPower";
+        StartCoroutine(GenerateRestoreLife());
     }
 }
 

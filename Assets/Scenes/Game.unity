@@ -511,6 +511,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 2322631187811652595, guid: cdfd842b5572f0f4d8ed3f588c06a62b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 2322631187811652594, guid: cdfd842b5572f0f4d8ed3f588c06a62b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -619,6 +624,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 1789754280245977142, guid: b5894c60d209b8d47977233795d23067,
+    type: 3}
+  lifePrefab: {fileID: 7517903696916568288, guid: d723ae92c471367448f3fc0451e1d872,
     type: 3}
   enemySprite:
   - {fileID: 21300000, guid: bdb529151e4276349a77b0fe69768726, type: 3}
